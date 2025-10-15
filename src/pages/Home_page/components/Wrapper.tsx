@@ -1,53 +1,83 @@
 import React from "react";
-import wrapper_banner from '../../../assets/about_banner_church_view.jpg'
+import wrapper_banner from "../../../assets/about_banner_church_view.jpg";
+import { Heart, Church, Users, BookOpen, Briefcase, Globe, Users2, HelpingHand } from "lucide-react";
 
-const MissionSection: React.FC = () => {
+const Mission_section: React.FC = () => {
   const missions = [
     {
-      icon: "fa-solid fa-book-bible",
-      title: "Preach",
+      icon: <BookOpen className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Gospel Preaching",
       description:
-        "We proclaim the gospel of our Lord Jesus Christ across cities, villages, and nations to win souls for Him.",
+        "Preaching the gospel of our Lord Jesus Christ in villages and cities in Nigeria and abroad to win souls for Christ.",
     },
     {
-      icon: "fa-solid fa-users-line",
-      title: "Disciple",
+      icon: <Church className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Church Planting",
       description:
-        "We plant churches and nurture believers to grow spiritually and serve God faithfully in their callings.",
+        "Planting churches and discipling the believers within these churches to grow spiritually and impact their communities.",
     },
     {
-      icon: "fa-solid fa-chalkboard-user",
-      title: "Equip",
+      icon: <Users2 className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Discipleship",
       description:
-        "We prepare and train ministers through workshops, conferences, and leadership development programs.",
+        "We nurture believers to grow in faith and live as true disciples of Christ through fellowship and mentorship.",
     },
     {
-      icon: "fa-solid fa-hand-holding-heart",
+      icon: <Briefcase className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Minister Training",
+      description:
+        "Preparing and equipping ministers of the gospel spiritually and economically to function effectively in their calling.",
+    },
+    {
+      icon: <Users className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Youth Development",
+      description:
+        "Organizing conferences, workshops, and seminars for youths, teenagers, and children to train them in the way of the Lord.",
+    },
+    {
+      icon: <Globe className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Missions",
+      description:
+        "Sending out missionaries to areas where the impact of the gospel is lacking, extending God’s kingdom globally.",
+    },
+    {
+      icon: <HelpingHand className="w-10 h-10 text-red-500 mb-4" />,
+      title: "Community Care",
+      description:
+        "Providing for the needs of the poor, widows, prisoners, and the less privileged — showing God’s love in action.",
+    },
+    {
+      icon: <Heart className="w-10 h-10 text-red-500 mb-4" />,
       title: "Reach Out",
       description:
-        "We meet the needs of widows, the poor, and the less privileged — showing God’s love in practical ways.",
+        "We reach out to communities, meeting both spiritual and physical needs with the love of Christ.",
     },
   ];
 
   return (
     <section
       className="py-20 bg-cover bg-center text-center relative my-16 px-4"
-      style={{ background: `radial-gradient(rgba(0,0,0,0.65) , black) , url(${wrapper_banner})`, backgroundAttachment: 'fixed' }}
+      style={{
+        background: `radial-gradient(rgba(0,0,0,0.65), black), url(${wrapper_banner})`,
+        backgroundAttachment: "fixed",
+      }}
     >
       <div className="relative max-w-7xl mx-auto px-6 text-white">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
-         We Preach, Disciple, Equip & Reach Out
+          Our Mission — Preach, Disciple, Equip & Reach Out
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {missions.map((item, index) => (
             <div
               key={index}
-              className="bg-white/20 p-8 rounded-2xl shadow hover:shadow-lg transition duration-300 flex flex-col items-center"
+              className="bg-white/15 p-8 rounded-2xl shadow hover:bg-white/25 transition duration-300 flex flex-col items-center"
             >
-              <i className={`${item.icon} text-5xl text-red-600 mb-4`}></i>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-white/80 leading-relaxed">
+              {item.icon}
+              <h3 className="text-xl font-semibold mb-2 text-white">
+                {item.title}
+              </h3>
+              <p className="text-white/80 text-sm leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -58,4 +88,4 @@ const MissionSection: React.FC = () => {
   );
 };
 
-export default MissionSection;
+export default Mission_section;

@@ -1,39 +1,38 @@
-@import "tailwindcss"; 
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700; 
+  font-family: 'Montserrat', sans-serif;;
+  
+  font-weight: 700;
 }
 
 p, li, a, span, div {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; 
-    line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
-header span{
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    color: #181818;
-    font-size: 1rem;
+header span,
+header a {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #181818;
 }
 
-header a{
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    color: #181818;
-    font-size: 1.1rem;
-    text-decoration: none;
+header a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #d32f2f; /* optional red hover tone */
 }
 
 @media (min-width: 992px) {
-    header span{
-        font-size: 1.5rem;
-    } 
+  header span {
+    font-size: 1.5rem;
+  }
 }

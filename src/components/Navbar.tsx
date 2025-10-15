@@ -52,10 +52,10 @@ const Header: React.FC = () => {
               className="hidden md:flex gap-4 items-center"
               aria-label="Primary Navigation"
             >
-              <a className="nav-link text-black hover:text-red-700" href="index.html">
+              <a className="nav-link text-black hover:text-red-700" href="/">
                 Home
               </a>
-              <a className="nav-link text-black hover:text-red-700" href="pages/about.html">
+              <a className="nav-link text-black hover:text-red-700" href="/about">
                 About
               </a>
               <a className="nav-link text-black hover:text-red-700" href="ministries.html">
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
               <a className="nav-link text-black hover:text-red-700" href="blog.html">
                 Article Of Faith
               </a>
-              <a className="nav-link text-black hover:text-red-700" href="leadership.html">
+              <a className="nav-link text-black hover:text-red-700" href="/leadership">
                 Leadership
               </a>
               <a className="nav-link text-black hover:text-red-700" href="contact.html">
