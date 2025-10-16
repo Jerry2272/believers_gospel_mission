@@ -75,13 +75,13 @@ export const Leadership: React.FC = () => {
     {
       id: 3,
       title: "Administrative Staff",
-      gridCols: "sm:grid-cols-2 md:grid-cols-2 gap-10 p-12 lg:px-[8em] max-w-5xl mx-auto",
-      style: {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.87), rgba(0,0,0,0.87)), url(${card_bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      },
+      gridCols: "sm:grid-cols-2 md:grid-cols-2 gap-10 p-12 lg:px-[6em] max-w-6xl mx-auto",
+      // style: {
+      //   backgroundImage: `linear-gradient(rgba(0,0,0,0.87), rgba(0,0,0,0.87)), url(${card_bg})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundAttachment: "fixed",
+      // },
       members: [
         {
           id: 7,

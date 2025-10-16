@@ -2,7 +2,7 @@ import React from "react";
 import wrapper_banner from "../../../assets/about_banner_church_view.jpg";
 import { Heart, Church, Users, BookOpen, Briefcase, Globe, Users2, HelpingHand } from "lucide-react";
 
-const Mission_section: React.FC = () => {
+const Wrapper: React.FC = () => {
   const missions = [
     {
       icon: <BookOpen className="w-10 h-10 text-red-500 mb-4" />,
@@ -88,4 +88,4 @@ const Mission_section: React.FC = () => {
   );
 };
 
-export default Mission_section;
+export default Wrapper;
