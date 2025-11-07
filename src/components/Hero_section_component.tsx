@@ -1,38 +1,36 @@
  
-import React from 'react'
+import React from 'react' 
 
 interface hero_section  {
     hero_banner: string,
     cta?: string,
     title: string,
     description: string,
-    className?: string
+    className?: string,
+    span?: string
 
 }
 
-export const Hero_section_component :React.FC <hero_section> = ({hero_banner, title,description,cta, className}) => {
+export const Hero_section_component :React.FC <hero_section> = ({hero_banner, title,description,span, cta, className}) => {
   return (
-    <section
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      className={`bg-cover bg-center text-white flex flex-col space-y-5 items-center justify-center text-center px-4 relative pt-[160px] ${className} lg:mt-[9em] lg:mx-[66px] py-12 my-16`}
-      style={{ background:`radial-gradient(rgba(0,0,0,0.30), black) , url(${hero_banner})` , backgroundPosition: 'bottom', backgroundSize: 'cover'}}
-    >
-      <div className=" p-8 flex justify-center items-center flex-col absolute inset-0">
-        <h1 className="text-3xl md:text-5xl font-[500] max-w-3xl mb-2 leading-snug">
-          {/* */}
-          {title}
-        </h1>
-        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10">
-          {/* Sending out missionaries to areas where{" "}
-          <br className="hidden lg:block md:block" /> the impact of the gospel is lacking */}
-          {description}
-        </p>
-        <button className="bg-red-800 hover:bg-red-900 text-white px-6 py-2 font-semibold transition duration-300">
-          {/* Join Us Live Stream Every Sunday */}
-          {cta}
-        </button>
-      </div>
-    </section>
+   <section
+  className={`relative bg-center bg-cover flex items-end justify-start text-white ${className}`}
+  style={{ backgroundImage: `url(${hero_banner})` }}
+>
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black"></div>
+
+  <div className="relative p-8 z-10 pb-10">
+    <h1 className="text-3xl lg:text-6xl lg:w-6xl font-extrabold mb-3 leading-tight"><span className='text-[#e41e26] text-4xl lg:text-6xl lg:w-5xl font-extrabold mb-3 leading-tight'>{span}</span> <br /> {title}</h1>
+    <p className="text-lg md:text-xl mb-6"><i>{description}</i></p>
+    {cta && (
+      <button className="border border-[#fff] text-[#fff] px-6 py-2 font-semibold transition duration-300">
+        <a href="https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz" className='hover:text-[#1e5254]'>
+        {cta}
+        </a>
+      </button>
+    )}
+  </div>
+</section>
+
   )
 }

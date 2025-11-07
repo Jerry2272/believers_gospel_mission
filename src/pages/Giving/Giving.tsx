@@ -1,6 +1,6 @@
 import React from 'react'
 import { Hero_section_component } from '../../components/Hero_section_component'
-import hero_banner from '../../assets/hero_banner.jpg'
+import hero_banner from '../../assets/giving.jpg'
 import { Why_give } from './component/Why_give'
 
 export const Giving:React.FC = () => {
@@ -11,7 +11,7 @@ export const Giving:React.FC = () => {
         title="Thank you for giving"
         description="The generous will prosper; those who refresh others will themselves be refreshed.”"
         hero_banner={hero_banner}
-        className="h-[50vh] py-12"
+        className="h-[80vh] py-12"
       />
     </section>
 

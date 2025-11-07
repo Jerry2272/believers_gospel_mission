@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Hero_section_component } from "../../components/Hero_section_component";
-import hero_banner from "../../assets/about_banner_church_view.jpg";
-import event1 from "../../assets/about_banner_church_view.jpg";
-import event2 from "../../assets/about_banner_church_view.jpg";
-import event3 from "../../assets/about_banner_church_view.jpg";
-import event4 from "../../assets/about_banner_church_view.jpg";
+import hero_banner from "../../assets/upcoming-event.jpg"
+import event1 from "../../assets/upcoming-event.jpg";
+import event2 from "../../assets/upcoming-event.jpg";
+import event3 from "../../assets/upcoming-event.jpg";
+import event4 from "../../assets/upcoming-event.jpg";
 
 export const Event: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
@@ -46,50 +46,68 @@ export const Event: React.FC = () => {
         "Join us as we celebrate the birth of Christ with hymns, drama, and charity outreaches to communities in need.",
       img: event4,
     },
+    {
+      id: 5,
+      title: "Christmas Carol & Outreach",
+      date: "December 22nd, 2025",
+      location: "BGM Main Auditorium",
+      description:
+        "Join us as we celebrate the birth of Christ with hymns, drama, and charity outreaches to communities in need.",
+      img: event4,
+    },
+    {
+      id: 6,
+      title: "Christmas Carol & Outreach",
+      date: "December 22nd, 2025",
+      location: "BGM Main Auditorium",
+      description:
+        "Join us as we celebrate the birth of Christ with hymns, drama, and charity outreaches to communities in need.",
+      img: event4,
+    },
   ];
 
   return (
     <>
       <Hero_section_component
-        title="Upcoming Events"
+        title="UPCOMING EVENTS"
         hero_banner={hero_banner}
         description="Stay informed about our upcoming programs and gatherings that strengthen faith and build fellowship."
-        className="h-[300px]"
+        className="h-[80vh]"
       />
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white sm:py-24 lg:py-32">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">Church Events</h2>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#e41e26]">Church Events</h2>
+          <p className="text-[#050505] mt-3 max-w-xl mx-auto">
             Don’t miss out on what’s happening at Believers Gospel Mission — join us in worship, learning, and impact.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 placeholder-orange-50 lg:pl-0">
           {events.map((event) => (
             <div
               key={event.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+              className="bg-white rounded-2xl overflow-hidden   transition"
             >
               <div className="h-56">
                 <img
                   src={event.img}
                   alt={event.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">
+              <div className="p-6 pl-0">
+                <h3 className="text-xl font-semibold text-[#e41e26] mb-2">
                   {event.title}
                 </h3>
-                <p className="text-sm text-gray-500 mt-2">{event.date}</p>
-                <p className="text-sm text-gray-500">{event.location}</p>
-                <p className="text-gray-600 mt-3 line-clamp-3">
+                <p className="text-[#050505] text-sm mb-2">{event.date}</p>
+                <p className="text-[#1e5254] text-sm mb-2">{event.location}</p>
+                <p className="text-[#050505] text-sm mb-1 mt-3 line-clamp-3">
                   {event.description}
                 </p>
                 <button
                   onClick={() => setSelectedEvent(event)}
-                  className="mt-5 bg-red-700 text-white px-5 py-2 rounded-lg hover:bg-red-800 transition"
+                  className="mt-5 border-l border-b border-[#e41e26] text-[#050505] px-3 py-1   transition-colors"
                 >
                   Learn More
                 </button>
@@ -105,7 +123,7 @@ export const Event: React.FC = () => {
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 relative shadow-xl">
             <button
               onClick={() => setSelectedEvent(null)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+              className="absolute top-3 right-3 text-[#050505] hover:text-gray-800 text-2xl font-bold"
             >
               &times;
             </button>
@@ -118,21 +136,21 @@ export const Event: React.FC = () => {
               />
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl font-bold text-[#050505] mb-3">
               {selectedEvent.title}
             </h2>
-            <p className="text-sm text-gray-600 mb-1">
-              📅 <strong>Date:</strong> {selectedEvent.date}
+            <p className="text-sm text-[#050505] mb-1">
+              <strong>Date:</strong> {selectedEvent.date}
             </p>
-            <p className="text-sm text-gray-600 mb-4">
-              📍 <strong>Location:</strong> {selectedEvent.location}
+            <p className="text-sm text-[#050505] mb-4">
+              <strong>Location:</strong> {selectedEvent.location}
             </p>
-            <p className="text-gray-700 leading-relaxed">{selectedEvent.description}</p>
+            <p className="text-[#050505] leading-relaxed">{selectedEvent.description}</p>
 
             <div className="mt-6 text-right">
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="bg-red-700 text-white px-5 py-2 rounded-lg hover:bg-red-800 transition"
+                className="bg-[#e41e26] text-white px-5 py-2 rounded-lg hover:bg-red-800 transition"
               >
                 Close
               </button>

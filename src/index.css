@@ -2,23 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;;
-  
+h1{
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  font-weight: 700;
+}
+h2 ,h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  /* color: #e41e26; */
   font-weight: 700;
 }
 
-p, li, a, span, div {
+p, span, div {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.7; 
 }
 
 header span,
 header a {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: #181818;
+  color: #fff;
+  font-size: 1.2rem;
+}
+header .giving-btn {
+   color: #fff;
 }
 
 header a {
@@ -28,11 +37,11 @@ header a {
 }
 
 header a:hover {
-  color: #d32f2f; /* optional red hover tone */
+  color: #1e5254; /* optional red hover tone */
 }
 
 @media (min-width: 992px) {
   header span {
-    font-size: 1.5rem;
+    font-size: 60px;
   }
 }

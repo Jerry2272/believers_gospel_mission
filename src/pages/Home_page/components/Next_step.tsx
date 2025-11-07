@@ -1,25 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Droplets, Hand } from "lucide-react"; // you can swap icons if needed
+import { Heart, Droplets, Hand } from "lucide-react";
 
-const NextStepsSection :React.FC = () => {
+const NextStepsSection: React.FC = () => {
   const steps = [
     {
-      icon: <Hand className="w-10 h-10 text-red-700" />,
+      icon: <Hand className="w-10 h-10 text-[#e41e26]" />,
       title: "I Said Yes",
       description:
         "I boldly said yes to God's incredible purpose, embracing a divine destiny.",
       link: "/next-steps/said-yes",
     },
     {
-      icon: <Heart className="w-10 h-10 text-red-700" />,
+      icon: <Heart className="w-10 h-10 text-[#e41e26]" />,
       title: "Prayer Request",
       description:
         "Pray daily and with conviction — embracing God's unfailing love and guidance.",
       link: "/next-steps/prayer-request",
     },
     {
-      icon: <Droplets className="w-10 h-10 text-red-700" />,
+      icon: <Droplets className="w-10 h-10 text-[#e41e26]" />,
       title: "Baptism",
       description:
         "Baptism welcomes fresh, vibrant new life into God's loving family.",
@@ -28,14 +28,14 @@ const NextStepsSection :React.FC = () => {
   ];
 
   return (
-    <section className="py-20 text-center px-6 lg:px-20">
+    <section className="py-20 text-center px-6 lg:px-20 bg-white">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-5xl font-bold mb-12 text-gray-900"
+        className="text-3xl md:text-5xl font-bold mb-12 text-[#fff] bg-[#050505] p-2"
       >
         Next Steps
       </motion.h2>
@@ -49,10 +49,10 @@ const NextStepsSection :React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="bg-black/80 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center p-10"
+            className="bg-black/80 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 flex flex-col items-center text-center p-10"
           >
             {/* Icon */}
-            <div className="flex items-center justify-center w-20 h-20 rounded-full mb-6">
+            <div className="flex items-center justify-center w-20 h-20 rounded-full mb-6 bg-white/10">
               {step.icon}
             </div>
 
@@ -62,14 +62,14 @@ const NextStepsSection :React.FC = () => {
             </h3>
 
             {/* Description */}
-            <p className="text-white/60 mb-8 leading-relaxed">
+            <p className="text-white/70 mb-8 leading-relaxed">
               {step.description}
             </p>
 
             {/* Button */}
             <a
               href={step.link}
-              className="inline-block bg-red-700 text-white px-6 py-2  font-medium hover:bg-red-800 transition duration-300"
+              className="inline-block bg-[#e41e26] text-white px-8 py-3  font-medium transition duration-300"
             >
               Learn More
             </a>

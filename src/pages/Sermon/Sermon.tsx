@@ -1,10 +1,10 @@
 import React from "react";
 import { Hero_section_component } from "../../components/Hero_section_component";
-import hero_banner from "../../assets/about_banner_church_view.jpg";
-import sermon1 from "../../assets/about_banner_church_view.jpg";
-import sermon2 from "../../assets/about_banner_church_view.jpg";
-import sermon3 from "../../assets/about_banner_church_view.jpg";
-import sermon4 from "../../assets/about_banner_church_view.jpg";
+import hero_banner from "../../assets/sermon-banner.jpg";
+import sermon1 from "../../assets/sermon-message.jpg";
+import sermon2 from "../../assets/sermon-message.jpg";
+import sermon3 from "../../assets/sermon-message.jpg";
+import sermon4 from "../../assets/sermon-message.jpg";
 
 export const Sermon: React.FC = () => {
   const sermons = [
@@ -14,7 +14,7 @@ export const Sermon: React.FC = () => {
       preacher: "Pastor Marcus D. Andrews",
       date: "October 13, 2025",
       img: sermon1,
-      link: "https://youtube.com",
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const Sermon: React.FC = () => {
       preacher: "Pastor Ruth Eze",
       date: "October 6, 2025",
       img: sermon2,
-      link: "https://youtube.com",
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export const Sermon: React.FC = () => {
       preacher: "Rev. Chike Obi",
       date: "September 29, 2025",
       img: sermon3,
-      link: "https://youtube.com",
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
     },
     {
       id: 4,
@@ -38,7 +38,23 @@ export const Sermon: React.FC = () => {
       preacher: "Pastor Jane Okafor",
       date: "September 22, 2025",
       img: sermon4,
-      link: "https://youtube.com",
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
+    },
+    {
+      id: 5,
+      title: "Living a Purpose-Driven Life",
+      preacher: "Pastor Jane Okafor",
+      date: "September 22, 2025",
+      img: sermon4,
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
+    },
+    {
+      id: 6,
+      title: "Living a Purpose-Driven Life",
+      preacher: "Pastor Jane Okafor",
+      date: "September 22, 2025",
+      img: sermon4,
+      link: "https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz",
     },
   ];
 
@@ -46,17 +62,17 @@ export const Sermon: React.FC = () => {
     <>
       {/* ===== HERO SECTION ===== */}
       <Hero_section_component
-        title="Sermons & Messages"
+        title="SERMONS & MESSAGES"
         hero_banner={hero_banner}
         description="Be blessed and inspired by powerful messages from our ministers — building your faith through the Word of God."
-        className="h-[300px]"
+        className="h-[80vh]"
       />
 
       {/* ===== SERMONS SECTION ===== */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="text-center mb-16 px-6">
-          <h2 className="text-3xl font-bold text-gray-900">Recent Sermons</h2>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#e41e26]">Recent Sermons</h2>
+          <p className="text-[#050505] mt-3 max-w-2xl mx-auto">
             Catch up with our latest messages and teachings that will uplift
             your spirit and strengthen your walk with God.
           </p>
@@ -66,29 +82,29 @@ export const Sermon: React.FC = () => {
           {sermons.map((sermon) => (
             <div
               key={sermon.id}
-              className="bg-white shadow-md  overflow-hidden group transition-all hover:shadow-lg"
+              className="bg-white  overflow-hidden group transition-all"
             >
-              <div className="h-56 w-full bg-gray-200 relative">
+              <div className="h-56 w-full  relative">
                 <img
                   src={sermon.img}
                   alt={sermon.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full rounded-2xl object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              <div className="p-6 text-left">
-                <h4 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
+              <div className="p-6 pl-0 text-left">
+                <h4 className="text-xl font-bold mb-2 line-clamp-2">
                   {sermon.title}
                 </h4>
-                <p className="text-gray-600 text-sm mb-3">
+                <p className="text-[#050505] text-sm mb-3">
                   {sermon.preacher}
                 </p>
-                <p className="text-gray-400 text-sm mb-5">{sermon.date}</p>
+                <p className="text-[#050505] text-sm mb-5">{sermon.date}</p>
                 <a
                   href={sermon.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-red-700 text-white px-5 py-2  hover:bg-blue-800 transition-colors"
+                  className="inline-block border-l border-b border-[#e41e26] text-[#050505] px-5 py-2   transition-colors"
                 >
                   Watch Sermon
                 </a>
@@ -103,10 +119,10 @@ export const Sermon: React.FC = () => {
             Want more messages and teachings?
           </p>
           <a
-            href="https://youtube.com"
+            href="https://youtube.com/@bgm-hq?si=AyN_Wd3cSKeMSkxz"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-black text-white px-8 py-3  font-medium hover:bg-gray-800 transition-all"
+            className="inline-block bg-[#e41e26] text-[#fff] px-8 py-3  font-medium hover:bg-gray-800 transition-all"
           >
             Visit Our YouTube Channel →
           </a>

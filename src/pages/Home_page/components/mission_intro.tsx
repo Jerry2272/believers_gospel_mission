@@ -1,65 +1,83 @@
 import React from "react";
-// import get_involved from '../../assets/hero_banner.jpg'
 import { motion } from "framer-motion";
 
-const Mission_into: React.FC = () => {
+const Mission_intro: React.FC = () => {
   return (
- <section className="py-20 text-gray-800">
+    <section className="pb-24 bg-[#f9f9f9] text-[#050505]"
+    >
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Left Column - Love & Compassion */}
+        {/* Left Column - Belief Section */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="space-y-6"
         >
-          <h4 className="text-red-700 uppercase tracking-widest font-semibold mb-2">
-           Our Belief
+          <h4 className="uppercase text-[#050505] font-semibold tracking-[0.15em]">
+            Our Belief
           </h4>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Love and <span className="text-red-700">Compassion</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Love and <span className="text-[#e41e26]">Compassion</span>
           </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Believers Gospel Mission is committed to showing the love and compassion of Jesus Christ to the world. We preach the Gospel with grace and truth, reaching the unreached and transforming lives through the power of God’s Word. We believe love and compassion are the heartbeat of true ministry—touching lives, healing hearts, and leading many to salvation in Christ Jesus.
+          <p className="text-[#050505] leading-relaxed text-lg">
+            Believers Gospel Mission is devoted to spreading the love and compassion 
+            of Jesus Christ to every corner of the world. Through the Gospel, we bring 
+            hope, healing, and transformation to hearts and communities. Love and compassion 
+            are not just values — they are our way of life.
           </p>
+
+          <div className="mt-6">
+            <a
+              href="#get-involved"
+              className="inline-block bg-[#e41e26] text-white px-6 py-3  hover:bg-[#174243] transition duration-300"
+            >
+              Get Involved
+            </a>
+          </div>
         </motion.div>
 
         {/* Right Column - Mission & Vision */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white shadow-xl rounded-2xl p-10 border-l-4 border-red-700"
+          className="relative bg-white shadow-lg   p-10 border-t-8 border-[#e41e26] hover:shadow-2xl transition-shadow duration-300"
         >
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-[#050505] mb-6">
             Our Mission & Vision
           </h3>
 
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            <strong>Vision Statement:</strong>  
-            Unreached people in Nigeria and abroad will be transformed by the Gospel message
-            and discipled in their new faith.
-          </p>
+          <div className="space-y-5 text-gray-700">
+            <p>
+              <strong className="text-[#050505]">Vision Statement:</strong>  
+              <br />
+            Unreached people in Nigeria and abroad will be transformed by the Gospel message and discipled in their new faith.
+            </p>
 
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            <strong>Mission Statement:</strong>  
-            Preaching the gospel of our Lord Jesus Christ in villages and cities in Nigeria and abroad
-            to win souls for Christ; planting churches and discipling believers within these churches;
-            preparing and equipping ministers spiritually and economically to enable them to function
-            effectively in their callings.
-          </p>
+            <p>
+              <strong className="text-[#050505]">Mission Statement:</strong>  
+              <br />
+              To preach the Gospel of Jesus Christ in villages and cities, win souls, 
+              plant churches, and disciple believers — equipping ministers both 
+              spiritually and economically to fulfill their divine callings.
+            </p>
 
-          <p className="text-gray-700 leading-relaxed">
-            <strong>Celebrate with us</strong> — as we continue to send out missionaries to areas where the
-            impact of the Gospel is lacking, provide for the needs of widows and orphans, and establish
-            projects that uplift communities and glorify God.
-          </p>
+            <p>
+              <strong className="text-[#050505]">Celebrate with us —</strong> as we 
+              continue to send missionaries, care for widows and orphans, and uplift 
+              communities through projects that glorify God.
+            </p>
+          </div>
+
+          <div className="absolute -top-6 right-10 bg-[#e41e26] text-white px-4 py-1  text-sm shadow-md">
+            Faith in Action
+          </div>
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Mission_into;
+export default Mission_intro;

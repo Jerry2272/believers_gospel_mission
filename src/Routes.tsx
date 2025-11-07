@@ -12,10 +12,14 @@ import { Giving } from './pages/Giving/Giving'
 import { Contact } from './pages/Contact/Contact'
 import { Sermon } from './pages/Sermon/Sermon'
 import { Event } from './pages/Event/Event'
+import { Branches } from './pages/Branches/Branches'
+import ScrollToTop from "./components/ScrollToTop";
+
 
 export const RoutesPages :React.FC = () => {
   return (
     <Router>
+        <ScrollToTop />
           <Header />
         <Routes>
             <Route path='/' element={<Home />} />
@@ -28,8 +32,10 @@ export const RoutesPages :React.FC = () => {
             <Route path='/contact' element={<Contact  />} /> 
             <Route path='/sermons' element={<Sermon  />} /> 
             <Route path='/events' element={<Event  />} /> 
+            <Route path='/branches' element={<Branches  />} /> 
           </Routes>
           <Footer />
     </Router>
   )
 }
+ 

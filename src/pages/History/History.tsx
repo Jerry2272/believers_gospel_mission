@@ -2,6 +2,7 @@ import React from "react";
 import { Hero_section_component } from "../../components/Hero_section_component";
 import hero_banner from "../../assets/hero_banner.jpg";
 import persons_img1 from "../../assets/rev_amos.png";
+import history_banner from "../../assets/envangelism.jpg";
 
 interface HistorySection {
   id: number;
@@ -37,7 +38,7 @@ export const History: React.FC = () => {
       subtitle: "How the name and ministry structure officially began.",
       paragraphs: [
         "Because of growing persecution, all the new converts came together and formed a fellowship known as Believers Fellowship Group.",
-        "Later, when Bishop Amos returned from the United States of America in 1984, where he had gone for studies, the fellowship evolved into a ministry and was renamed Believers Gospel Mission.",
+        "Later in 1984, the fellowship evolved into a ministry and was renamed Believers Gospel Mission.",
         "From then, the work expanded rapidly across Nigeria and beyond — preaching salvation, holiness, and the power of the Holy Spirit.",
       ],
     },
@@ -46,8 +47,8 @@ export const History: React.FC = () => {
       title: "The Legacy of Bishop Amos Nwokenna",
       subtitle: "Honoring the founder’s life and lasting impact.",
       paragraphs: [
-        "In September 2015, Bishop Amos Nwokenna passed into glory at the age of 74, after helping the ministry grow to over 56 branches nationwide, with evangelistic and mission operations around the world.",
-        "He was laid to rest on 30th December, 2015, at the National Headquarters where the ministry began. Thousands came from around the world to honor him as a gallant soldier of Christ and one of the fathers of Pentecostalism in Nigeria.",
+        "In September 1998, Bishop Amos Nwokenna passed into glory at the age of 74, after helping the ministry grow to over 56 branches nationwide, with evangelistic and mission operations around the world.",
+        "He was laid to rest on 30th December, 1998, at the National Headquarters where the ministry began. Thousands came from around the world to honor him as a gallant soldier of Christ and one of the fathers of Pentecostalism in Nigeria.",
       ],
     },
     {
@@ -75,7 +76,7 @@ export const History: React.FC = () => {
         title="Our History"
         description="Believers Gospel Mission started as an evangelistic movement whose root was from the Scripture Union. After the Nigerian Civil War that ended on 12th January, 1970, some Christians began spreading the gospel in the then Old Etiti, Imo State — sparking a revival that birthed this great ministry."
         hero_banner={hero_banner}
-        className="h-[70vh] py-12"
+        className="h-[80vh] py-12"
       />
 
       {/* History Sections */}
@@ -86,7 +87,7 @@ export const History: React.FC = () => {
             index % 2 === 0 ? "mx-6 md:mx-12 lg:mx-20 my-12" : "my-12"
           }`}
           style={{
-            backgroundImage: `url(${hero_banner})`,
+            backgroundImage: `url(${history_banner})`,
           }}
         >
           {/* Overlay Blur */}

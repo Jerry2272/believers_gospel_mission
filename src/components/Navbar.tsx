@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import logo from "../assets/bgc_logo.png";
+import logo from "../assets/bgm_logo.jpg";
 import { Link, NavLink } from "react-router";
+import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { id: 1, text: "Home", url: "/" },
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
     { id: 3, text: "Ministries", url: "/ministry" },
     { id: 4, text: "Sermons", url: "/sermons" },
     { id: 5, text: "Events", url: "/events" },
-    { id: 6, text: "Gallery", url: "/gallery" },
+    { id: 6, text: "Branches", url: "/branches" },
     { id: 7, text: "Article Of Faith", url: "/aof" },
     { id: 8, text: "Leadership", url: "/leadership" },
     { id: 9, text: "Contact", url: "/contact" },
@@ -27,65 +28,50 @@ const Header: React.FC = () => {
 
   return (
     <div className="fixed w-full z-[999] top-0">
-      {/* Top Header */}
-      <div className="bg-red-700 text-white text-sm py-2">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-          <div className="flex flex-wrap gap-4 items-center text-center md:text-left">
-            <p>Etiti/Ihite Rd, Isinweke, Ihite Uboma, Imo State, Nigeria.</p>
-            <p>Sunday Service: 9:00 AM</p>
-          </div>
-          <div className="flex items-center gap-4 mt-2 md:mt-0">
-            <a href="#" className="hover:text-gray-200">
-              Facebook
-            </a>
-            <a href="#" className="hover:text-gray-200">
-              Instagram
-            </a>
-            <a href="#" className="hover:text-gray-200">
-              YouTube
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <header className="bg-[#050505]/80 backdrop-blur-md shadow px-4">
+        <div className="max-w-8xl mx-auto flex justify-between items-center px-4 py-2">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center">
+          <NavLink
+            to="/"
+            className="flex items-center bg-[#050505]/60 backdrop-blur-md shadow px-4 gap-2"
+          >
             <img
               src={logo}
               alt="Church Logo"
-              className="w-20 h-20 object-cover"
+              className="w-16 lg:w-20 h-16 lg:h-20 object-cover"
             />
-            <span className="text-black uppercase leading-[10px] ml-2 font-semibold">
-              Believers <br /> Gospel Mission
+            <span className="uppercase text-2xl lg:text-4xl font-extrabold mb-1 leading-tight text-white">
+              BGM
             </span>
           </NavLink>
 
-          {/* Navbar (Desktop) */}
-          <nav className="hidden md:flex gap-4 items-center relative">
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex gap-6 items-center relative">
             {navLinks.map((item) =>
               item.dropdown ? (
-                <div
-                  key={item.id}
-                  className="relative"
-                 
-                >
-                  <button className="text-black hover:text-red-700 transition font-medium cursor-pointer" onClick={() => setOpenDropdown(!openDropdown)}>
+                <div key={item.id} className="relative">
+                  <button
+                    className="transition font-medium cursor-pointer text-white flex items-center hover:text-[#e41e26]"
+                    onClick={() =>
+                      setOpenDropdown(openDropdown === item.id ? false : item.id)
+                    }
+                  >
                     {item.text}
+                    <FaChevronDown className="inline-block ml-1 text-sm" />
                   </button>
 
-                  {openDropdown && (
-                    <div className="absolute top-full left-0 mt-2 bg-white text-black shadow-lg rounded-lg w-44 py-2 z-50">
+                  {openDropdown === item.id && (
+                    <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg w-44 py-2 z-50">
                       {item.dropdown.map((drop) => (
                         <NavLink
                           key={drop.id}
                           to={drop.url}
-                          className="block px-4 py-2 hover:bg-gray-100"
-                          onClick={() => {
-                            setOpenDropdown(!openDropdown)
-                          }}
+                          className={({ isActive }) =>
+                            `block px-4 py-2 text-[#050505] hover:bg-[#e41e26]/10 transition ${
+                              isActive ? "text-[#e41e26] font-semibold" : ""
+                            }`
+                          }
+                          onClick={() => setOpenDropdown(false)}
                         >
                           {drop.link_text}
                         </NavLink>
@@ -94,21 +80,24 @@ const Header: React.FC = () => {
                   )}
                 </div>
               ) : (
-                <Link
+                <NavLink
                   key={item.id}
                   to={item.url}
-                  className="text-black hover:text-red-700 font-medium transition"
+                  className={({ isActive }) =>
+                    `font-medium transition hover:text-[#e41e26] ${
+                      isActive ? "text-[#e41e26]" : "text-white"
+                    }`
+                  }
                 >
                   {item.text}
-                </Link>
+                </NavLink>
               )
             )}
 
             {/* CTA */}
             <Link
               to="/giving"
-              className="ml-4 bg-red-700 px-4 py-2 font-semibold hover:bg-red-800 transition"
-              style={{color: 'white'}}
+              className="ml-4 giving-btn bg-[#e41e26] text-white px-4 py-2 font-semibold transition hover:bg-[#c91a20]"
             >
               Give Online
             </Link>
@@ -116,62 +105,80 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black text-2xl"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="md:hidden text-white text-2xl"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? "✖" : "☰"}
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-black text-white">
-            <nav className="flex flex-col text-center py-4 space-y-2">
-              {navLinks.map((item) =>
-                item.dropdown ? (
-                  <div key={item.id}>
-                    <button
-                      onClick={() => setOpenDropdown(!openDropdown)}
-                      className="py-3 w-full hover:bg-white/10"
-                    >
-                      {item.text}
-                    </button>
-                    {openDropdown && (
-                      <div className="flex flex-col bg-gray-800">
-                        {item.dropdown.map((drop) => (
-                          <Link
-                            key={drop.id}
-                            to={drop.url}
-                            className="py-2 border-t border-white/10 hover:bg-white/10"
-                          >
-                            {drop.link_text}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    key={item.id}
-                    to={item.url}
-                    className="py-3 border-b border-white/10 hover:bg-white/10"
-                  >
-                    {item.text}
-                  </Link>
-                )
-              )}
-
-              <Link
-                to="/giving"
-                className="py-3 bg-red-700 hover:bg-red-800 transition"
-              >
-                Give Online
-              </Link>
-            </nav>
-          </div>
-        )}
       </header>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-[#050505] backdrop-blur-lg p-5 space-y-4 border-t border-[#e41e26]/40">
+          {navLinks.map((item) =>
+            item.dropdown ? (
+              <div key={item.id}>
+                <button
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === item.id ? false : item.id)
+                  }
+                  className="flex justify-between items-center w-full text-white font-medium"
+                >
+                  {item.text}
+                  <FaChevronDown
+                    className={`transform transition ${
+                      openDropdown === item.id ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {openDropdown === item.id && (
+                  <div className="mt-2 pl-4 space-y-2">
+                    {item.dropdown.map((drop) => (
+                      <NavLink
+                        key={drop.id}
+                        to={drop.url}
+                        className={({ isActive }) =>
+                          `block text-gray-300 hover:text-[#e41e26] ${
+                            isActive ? "text-[#e41e26]" : ""
+                          }`
+                        }
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {drop.link_text}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <NavLink
+                key={item.id}
+                to={item.url}
+                className={({ isActive }) =>
+                  `block text-white font-medium hover:text-[#e41e26] ${
+                    isActive ? "text-[#e41e26]" : ""
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.text}
+              </NavLink>
+            )
+          )}
+
+          <Link
+            to="/giving"
+            className="block w-full bg-[#e41e26] text-center text-white py-2 rounded-md font-semibold hover:bg-[#c91a20] transition"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Give Online
+          </Link>
+        </div>
+      )}
     </div>
+    
   );
 };
 

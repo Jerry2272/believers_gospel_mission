@@ -1,6 +1,7 @@
 import React from "react";
 import { Leadership_profile_card } from "../../Leadership/component/Leadership_profile_card";
-import hero_img from "../../../assets/about_banner_church_view.jpg";
+import hero_img from "../../../assets/article-of-faith.jpg";
+import article_img1 from "../../../assets/sermon-banner.jpg";
 
 export const Article_content: React.FC = () => {
   const articles = [
@@ -10,7 +11,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "We believe that all Scripture is given by inspiration of God and is the final authority for faith and practice. (2 Timothy 3:16; 2 Peter 1:21)",
-      img: hero_img,
+      img: article_img1
     },
     {
       id: 2,
@@ -35,7 +36,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "We believe Jesus Christ, the eternal Son of God, came to redeem mankind through His sacrificial death, resurrection, and ascension. (Luke 1:30-35; John 1:18; Philippians 3:20)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 5,
@@ -43,7 +44,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "Salvation is by grace through faith in Christ alone. The moment one believes, they are justified before God and translated from death to life. (Colossians 1:13; Acts 13:19)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 6,
@@ -67,7 +68,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "Every believer can be assured of their salvation, based on the unchanging promises of God in His Word. (1 John 5:13; Hebrews 10:22)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 9,
@@ -75,7 +76,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "All believers, united with Christ by the Holy Spirit, form the Church — the Body and Bride of Christ. (Matthew 16:18; Acts 2:42-47; Romans 12:5)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 10,
@@ -99,7 +100,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "It is the duty of every believer to reach the lost with the gospel and make disciples of all nations. (Matthew 28:18-20; Mark 16:15)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 13,
@@ -107,7 +108,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "We believe that Jesus will soon return to receive believers to Himself, both the living and those who have died in Him. (John 14:1-3; 1 Corinthians 15:51-52)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 14,
@@ -131,7 +132,7 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "The redeemed will dwell forever with God in glory, while those who reject Christ will face eternal punishment. (Luke 16:19-26; Revelation 20:11-15)",
-      img: hero_img,
+      img: article_img1,
     },
     {
       id: 17,
@@ -139,18 +140,18 @@ export const Article_content: React.FC = () => {
       title: "",
       description:
         "We believe water baptism and the Lord’s Supper are ordinances of the Church. We also hold that marriage is a holy covenant instituted by God, symbolizing the union of Christ and His Church. (Matthew 28:19; Luke 22:19-20; Ephesians 5:31-32)",
-      img: hero_img,
+      img: article_img1,
     },
   ];
 
   return (
     <section className="py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-gray-900">
+        <h2 className="text-3xl font-bold text-[#e41e26]">
           Our Articles of Faith
         </h2>
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-          These are the core truths and doctrines that define our belief and
+        <p className="text-[#050505] mt-3 max-w-2xl mx-auto px-2">
+          These are the core truths and doctrines that <br /> define our belief and
           guide our ministry as a church.
         </p>
       </div>

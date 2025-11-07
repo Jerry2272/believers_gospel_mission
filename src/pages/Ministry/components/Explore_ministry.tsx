@@ -1,11 +1,11 @@
 import React from 'react'
 import { Leadership_profile_card } from "../../Leadership/component/Leadership_profile_card";
-import youth_img from "../../../assets/about_banner_church_view.jpg";
-import women_img from "../../../assets/about_banner_church_view.jpg";
-import men_img from "../../../assets/about_banner_church_view.jpg";
-import children_img from "../../../assets/about_banner_church_view.jpg";
-import music_img from "../../../assets/about_banner_church_view.jpg";
-import evangelism_img from "../../../assets/about_banner_church_view.jpg";
+import youth_img from "../../../assets/ministry-banner.jpg";
+import women_img from "../../../assets/contact_hero.jpg";
+import men_img from "../../../assets/contact_hero.jpg";
+import children_img from "../../../assets/children-ministry.jpg";
+import media_img from "../../../assets/media-ministry.jpg";
+import evangelism_img from "../../../assets/envangelism.jpg";
 
 export const Explore_ministry:React.FC = () => {
      const ministries = [
@@ -47,7 +47,7 @@ export const Explore_ministry:React.FC = () => {
       title: "",
       description:
         "The Media Ministry is committed to spreading the Gospel through sound, visuals, and digital innovation. We capture, produce, and share life-changing messages, worship moments, and church events that inspire, educate, and draw people closer to God. Every image, video, and recording is a tool for evangelism and discipleship.",
-      img: music_img,
+      img: media_img,
     },
     {
       id: 6,
@@ -61,7 +61,7 @@ export const Explore_ministry:React.FC = () => {
   return (
     <section className="py-20 ">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">Explore Our Ministries</h2>
+          <h2 className="text-3xl font-bold tex">Explore Our Ministries</h2>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
             Each ministry is a vital part of our mission — serving different groups, nurturing gifts, and expanding the Kingdom of God.
           </p>

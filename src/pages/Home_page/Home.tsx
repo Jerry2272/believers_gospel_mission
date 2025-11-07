@@ -13,8 +13,8 @@ export const Home :React.FC = () => {
   return (
    <>
     <Hero_section />
-    <Wrapper />
     <About_into />
+    <Wrapper />
     <Impact_section />
     <Mission_into />
     <Mid_week_section /> 
